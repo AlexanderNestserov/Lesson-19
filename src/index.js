@@ -1,4 +1,4 @@
 import timer from './modules/timer';
 
 
-timer('10 november 2021');
+timer('01 January 2022');
