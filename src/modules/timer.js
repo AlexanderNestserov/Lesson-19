@@ -66,8 +66,8 @@ const timer = (deadline) => {
       getDayRemaining();
       getTimeRemaining();
       getYearRemaining();
-      let idTimeout;
-      idTimeout = setInterval(() => { updateClock(); }, 1000);
+      setInterval(updateClock, 1000);
+
    };
    updateClock();
 };
