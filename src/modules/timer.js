@@ -28,12 +28,13 @@ const timer = (deadline) => {
    };
    const updateClock = () => {
       let getTime = getTimeRemaining();
+
       timerHours.textContent = getTime.hours;
       timerMinutes.textContent = getTime.minutes;
       timerSeconds.textContent = getTime.seconds;
       let idTimeout;
       if (getTime.timeRemaining > 0) {
-         idTimeout = setInterval(() => { updateClock(); }, 1000);
+         idTimeout = setInterval(updateClock, 1000);
       } else if (getTime.timeRemaining <= 0) {
          clearInterval(idTimeout);
          timerHours.textContent = '00';
