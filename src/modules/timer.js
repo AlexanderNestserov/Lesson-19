@@ -43,7 +43,7 @@ const timer = (deadline) => {
       }
    };
    updateClock();
-   // setInterval(countTimer, 1000, '10 november 2021');
+
 };
 
 export default timer;
