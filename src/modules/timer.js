@@ -32,18 +32,15 @@ const timer = (deadline) => {
       timerHours.textContent = getTime.hours;
       timerMinutes.textContent = getTime.minutes;
       timerSeconds.textContent = getTime.seconds;
-      let idTimeout;
-      if (getTime.timeRemaining > 0) {
-         idTimeout = setInterval(updateClock, 1000);
-      } else if (getTime.timeRemaining <= 0) {
-         clearInterval(idTimeout);
+
+      if (getTime.timeRemaining <= 0) {
+
          timerHours.textContent = '00';
          timerMinutes.textContent = '00';
          timerSeconds.textContent = '00';
       }
    };
-   updateClock();
-   // setInterval(countTimer, 1000, '10 november 2021');
+   setInterval(updateClock, 1000);
 };
 
 export default timer;
