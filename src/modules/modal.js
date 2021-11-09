@@ -5,25 +5,24 @@ const modal = () => {
    const popupContent = document.querySelector('.popup-content');
    let count = 0;
    let idInterval;
-
+   console.dir(document);
    const animate = () => {
       count++;
       idInterval = requestAnimationFrame(animate);
-      if (count < 100) {
-         popupContent.style.top = count * 10 + 'px';
+      if (count < 100 && screen.availWidth  >= 768) {
+         popupContent.style.top = count + 'px';
       } else {
          cancelAnimationFrame(idInterval);
       }
    };
 
-
    popupBtn.forEach(btn => btn.addEventListener('click', () => {
-      modal.style.display = "block";
       idInterval = requestAnimationFrame(animate);
+      modal.style.display = "block";
+      count = 0;
    }));
    popupClose.addEventListener('click', () => {
       modal.style.display = "none";
-
    });
 };
 export default modal;
