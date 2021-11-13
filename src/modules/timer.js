@@ -1,4 +1,3 @@
-
 const timer = (deadline) => {
    const timerHours = document.getElementById('timer-hours');
    const timerMinutes = document.getElementById('timer-minutes');
@@ -28,12 +27,13 @@ const timer = (deadline) => {
    };
    const updateClock = () => {
       let getTime = getTimeRemaining();
+
       timerHours.textContent = getTime.hours;
       timerMinutes.textContent = getTime.minutes;
       timerSeconds.textContent = getTime.seconds;
       let idTimeout;
       if (getTime.timeRemaining > 0) {
-         idTimeout = setInterval(() => { updateClock(); }, 1000);
+         idTimeout = setInterval(updateClock, 1000);
       } else if (getTime.timeRemaining <= 0) {
          clearInterval(idTimeout);
          timerHours.textContent = '00';
@@ -42,7 +42,7 @@ const timer = (deadline) => {
       }
    };
    updateClock();
-   // setInterval(countTimer, 1000, '10 november 2021');
+
 };
 
 export default timer;
