@@ -5,7 +5,7 @@ const modal = () => {
    const popupContent = document.querySelector('.popup-content');
    let count = 0;
    let idInterval;
-   console.dir(document);
+
    const animate = () => {
       count++;
       idInterval = requestAnimationFrame(animate);
