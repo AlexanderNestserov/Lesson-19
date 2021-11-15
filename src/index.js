@@ -14,4 +14,4 @@ form();
 calc();
 sliderSwiper();
 tabs();
-sendForm();
+sendForm('form1');
