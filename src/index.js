@@ -4,6 +4,8 @@ import modal from './modules/modal';
 import form from './modules/form';
 import calc from './modules/calc';
 import sliderSwiper from './modules/sliderSwiper';
+import tabs from './modules/tabs';
+import sendForm from './modules/sendForm';
 
 timer('14 november 2021');
 menu();
@@ -11,3 +13,5 @@ modal();
 form();
 calc();
 sliderSwiper();
+tabs();
+sendForm();
