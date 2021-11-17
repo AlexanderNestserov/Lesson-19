@@ -14,4 +14,12 @@ form();
 calc();
 sliderSwiper();
 tabs();
-sendForm('form1');
+sendForm({
+   formId: 'form1',
+   someElem: [
+      {
+         type: 'block',
+         id: 'total'
+      }
+   ],
+});

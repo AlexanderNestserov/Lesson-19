@@ -14,27 +14,21 @@ const form = () => {
    const formPhone3 = document.getElementById('form3-phone');
    const form3 = document.getElementById('form3');
 
-   form1.addEventListener('submit', (e) => {
+   form1.addEventListener('input', (e) => {
       e.preventDefault();
-      let isError = false;
-      if (!/([^\s\-\а-яА-Я])+/g.test(formName1.value) && formName1.value !== "") {
-         alert('Кириллица');
-      } else {
-         isError = true;
-      }
+      e.target.value = e.target.value.replace(/[^\s\-\а-яА-Я]+/g, "");
+      // if (!/([^\s\-\а-яА-Я])+/g.test(formName1.value) && formName1.value !== ///"") 
       if (/[\-\_\!\.\~\*\'\w]+@([\w]+\.)+[\w]+/gi.test(formEmail1.value) && formEmail1.value !== "") {
          alert('Email');
       } else {
-         isError = true;
+
       }
       if (!/[^\(\)\-\d]+/g.test(formPhone1.value) && formPhone1.value !== "") {
          alert('Тел');
       } else {
-         isError = true;
+
       }
-      if (!isError) {
-         alert('Данные отправлены');
-      }
+
    });
 
    form2.addEventListener('submit', (e) => {
