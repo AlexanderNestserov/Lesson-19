@@ -3,7 +3,7 @@ const menu = () => {
    const menu = document.querySelector('menu');
    const active = document.querySelector('menu.active-menu');
    const closeBtn = menu.querySelector('.close-btn');
-   const menuItems = menu.querySelectorAll('ul>li>a');
+   const menuItems = menu.querySelectorAll('.link');
 
 
    //  const handleMenu = () => {
@@ -19,13 +19,15 @@ const menu = () => {
 
       }
    });
-   menu.addEventListener('click', (e) => {
-      //menuItems.forEach((tab)=>{
-
-      //});
-      if (e.target.classList.contains('close-btn')) {
+   closeBtn.addEventListener('click', (e) => {
+      if (e.target.closest('.close-btn')) {
          menu.classList.toggle('active-menu');
       }
    });
+   menuItems.forEach(menuItem => menuItem.addEventListener('click', (e) => {
+      if (e.target.closest('.link')) {
+         menu.classList.toggle('active-menu');
+      }
+   }));
 };
 export default menu;
