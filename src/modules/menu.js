@@ -6,17 +6,9 @@ const menu = () => {
    const menuItems = menu.querySelectorAll('.link');
 
 
-   //  const handleMenu = () => {
-   //     menu.classList.toggle('active-menu');
-   // };
-   // menuBtn.addEventListener('click', handleMenu);
-   //  closeBtn.addEventListener('click', handleMenu);
-
-   //  menuItems.forEach(menuItem => menuItem.addEventListener('click', handleMenu));
    menuBtn.addEventListener('click', (e) => {
       if (e.target.closest('.menu')) {
          menu.classList.toggle('active-menu');
-
       }
    });
    closeBtn.addEventListener('click', (e) => {
